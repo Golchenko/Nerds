@@ -500,6 +500,7 @@ input[type="radio"] .visually-hidden {
 }
 
 .modal-contact {
+    display: none;
     box-shadow: 0 20px 40px rgba(0, 1, 1, 0.75);
 }
 
@@ -923,3 +924,31 @@ label {
 .products {
     margin-bottom: 27px;
 }
+
+@keyframes shake {
+    0%, 10% { transform: translateX(0);}
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-10px);}
+    20%, 40%, 60%, 80% { transform: translateX(10px);}
+}
+
+.modal-error {
+    animation-name: shake;
+    animation-duration: 0.6s;
+}
+
+@keyframes bounce-open {
+    0% { transform: translateY(-2000px);}
+    70% { transform: translateY(30px);}
+    90% { transform: translateY(-10px);}
+    100% {transform: translateY(0);}
+}
+
+.modal-show {
+    display: block;
+    animation-name: bounce-open;
+    animation-duration: 0.6s;
+}
+
+html {
+    scroll-behavior: smooth;
+  }
